@@ -37,9 +37,14 @@ def video_frame_generator(video_path:str, frames:Iterable|None = None):
 
 
 if __name__ == "__main__":
+
+    # Create the frames folder if it doesn't exist
+    frames_folder = "data/frames"
+    if not os.path.exists(frames_folder):
+        os.makedirs(frames_folder)
     
     # List of frames to extract
-    frames_to_extract = list(range(1000, 2000, 50))
+    frames_to_extract = list(range(1000, 1200, 50))
 
     for frame_number, frame in video_frame_generator(VIDEO_PATH, frames_to_extract):
 
