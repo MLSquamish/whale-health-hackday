@@ -1,6 +1,10 @@
 from typing import List, Iterable
 
 import cv2
+import os
+
+# Drop the video listed below in the data folder
+VIDEO_PATH = r"./data/2023-08-25_Phantom4_18_Gully_0015-003.MOV"
 
 def video_frame_generator(video_path:str, frames:Iterable|None = None):
     # Create a VideoCapture object
@@ -33,6 +37,14 @@ def video_frame_generator(video_path:str, frames:Iterable|None = None):
 
 
 if __name__ == "__main__":
-    for frame_number, frame in video_frame_generator(r"./data/2023-08-25_Phantom4_18_Gully_0015-003.MOV", []):
-        cv2.imshow("video", frame)
+    
+    # List of frames to extract
+    frames_to_extract = list(range(1000, 2000, 50))
+
+    for frame_number, frame in video_frame_generator(VIDEO_PATH, frames_to_extract):
+
+        # Save the frame in the data/frames folder (to add the folder)
+        frame_path = os.path.join("data/frames", f"0015_003_frame_{frame_number}.jpg")
+        cv2.imwrite(frame_path, frame)
+        
         cv2.waitKey(1)
