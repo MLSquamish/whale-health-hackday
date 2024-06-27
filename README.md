@@ -16,7 +16,6 @@ If you want to work on a virtual machine in the cloud you can run an interactive
 https://colab.research.google.com/
 
 
-
 option 1- detecting the whale locations
 option 2- detecting the flattest whale
 
