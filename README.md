@@ -17,7 +17,8 @@ https://colab.research.google.com/
 
 
 
-
+option 1- detecting the whale locations
+option 2- detecting the flattest whale
 
 # Object detection based approaches
 
@@ -38,4 +39,12 @@ https://docs.fast.ai/examples/camvid.html
 
 # Colour and anomaly detection based approaches
 
-# Best frame detection ideas
+# Best frame detection ideas - frame id of longest whale
+
+# command line argument for the altitude data
+
+
+
+mike's notes
+
+- length varies as whale swims - estimate length oscillation over frames then pick longest 
